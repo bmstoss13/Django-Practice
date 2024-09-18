@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Polls App{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+</head>
+<body>
+    <header>
+    </header>
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">© 2024 Brian Stoss. All rights reserved.</span>
+        </div>
+    </footer>
+    {% bootstrap_javascript %}
+    {% block js %}{% endblock %}
+</body>
+</html>
+

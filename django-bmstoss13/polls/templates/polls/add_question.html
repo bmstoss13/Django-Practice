@@ -1,0 +1,20 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}Add a New Question{% endblock %}
+
+{% block content %}
+<h1>Add a New Question</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ question_form.as_p }}
+    <h2>Choices:</h2>
+    {{ formset.management_form }}
+    {{ formset.as_p }}
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<a href="{% url 'polls:index' %}" class="btn btn-secondary mt-2">Back to List</a>
+{% endblock %}
+
